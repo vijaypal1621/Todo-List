@@ -1,0 +1,64 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+<title> ToDo List</title>
+<link rel="stylesheet" href="style/style.css" />
+<script src="script/index.js" defer></script>
+</head>
+<body class="overall" style="background-image: url(images/bg-intro-desktop.png)"   >
+<h1> To DO list</h1>
+
+
+<div id= "main-card">
+ 
+    <div class="control">
+    <label for ="task">Task </label>
+     <input id ="task" class = "task" type="text" />
+    </div>
+    <div class="inline-controls">
+    <!-- <label for ="date"> Date</label> -->
+     <input id ="date"  class="date" type="date"/>
+   
+     <!-- <label for ="time"> Time</label> -->
+     <input id="time" type="time"/>
+    </div>
+    <button id="add-button" class="btn">ADD</button>
+
+</div> 
+
+<div class="overdue-card">
+  <h2 class="overdue-today"> Overdue</h2>
+<ul id ="overdue">
+</ul>
+</div>
+
+
+<div class="todays-card">
+    <h2 class="head-today"> Today</h2>
+<ul id ="today">
+</ul>
+</div>
+
+<div id ="tommorrows-card">
+    <h2 class="head-tommorrow"> Tommorrow</h2>
+    <ul id ="tommorrow">
+        
+    
+    
+    </ul>
+</div>
+<div id ="later-card">
+    <h2 class="head-later"> Later</h2>
+    <ul id ="later">
+        
+    
+    </ul>
+
+</div>
+
+
+</body>
+    
+</html>
