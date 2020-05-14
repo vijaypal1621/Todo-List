@@ -13,6 +13,24 @@ const laterList = [];
 function removeBtnHandler(){
      const parentList = this.closest('li');
     parentList.remove();
+
+}
+function checkboxHandler(){
+    const parentList = this.closest('li');
+    const removeBtn = parentList.querySelector('button');
+    const text= parentList.querySelector('span');
+    if (this.checked){
+        
+        text.style.textDecoration="line-through";
+         removeBtn.classList.add('visible');
+         console.log(removeBtn);
+         removeBtn.addEventListener('click', removeBtnHandler);
+    }
+    else{
+        removeBtn.classList.remove('visible');
+        text.style.textDecoration="none";
+
+    }
 }
 
 const renderlist= (section , list)=>{
@@ -37,10 +55,12 @@ const renderlist= (section , list)=>{
    `;
     
 
-  container.append(newNode);
-   const removeBtn = newNode.querySelector('button');
-   removeBtn.addEventListener('click', removeBtnHandler);
+    container.append(newNode);
+    const checkbox= newNode.querySelector('.checkbox');
 
+//    const removeBtn = newNode.querySelector('button');
+//    removeBtn.addEventListener('click', removeBtnHandler);
+   checkbox.addEventListener('click', checkboxHandler);
 };
 
 

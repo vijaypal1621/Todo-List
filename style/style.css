@@ -98,7 +98,7 @@ time{
 #remove-btn{
     position: relative;
     left: 400px;
-    /* display: none; */
+    visibility: hidden;
 
 }
 #remove-btn:hover{
@@ -106,5 +106,5 @@ time{
 
 }
 #remove-btn.visible{
-    display: none;
+  visibility: visible;
 }
