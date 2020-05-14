@@ -10,7 +10,10 @@ const todayList = [];
 const tommList = [];
 const laterList = [];
 
-
+function removeBtnHandler(){
+     const parentList = this.closest('li');
+    parentList.remove();
+}
 
 const renderlist= (section , list)=>{
     if (list.length===0){
@@ -24,6 +27,7 @@ const renderlist= (section , list)=>{
   const container=section.querySelector('ul');
         // creating new li item
     const newNode = document.createElement('li');
+  
     newNode.setAttribute('type', 'none');  // for removing the list icons 
     newNode.innerHTML=` <input class="checkbox" type="checkbox">
     <span id ="task-text"> ${list[list.length-1].task}  </span> 
@@ -34,8 +38,8 @@ const renderlist= (section , list)=>{
     
 
   container.append(newNode);
-
-
+   const removeBtn = newNode.querySelector('button');
+   removeBtn.addEventListener('click', removeBtnHandler);
 
 };
 
@@ -66,7 +70,7 @@ const d1=parseInt(dateStr);
 if (d1 - dd ===0){
     todayList.push(listObject);
     renderlist(todaySection,todayList);
-
+    
 }
 else if (d1 - dd ===1){
     tommList.push(listObject);

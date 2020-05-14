@@ -106,5 +106,5 @@ time{
 
 }
 #remove-btn.visible{
-    display: block;
+    display: none;
 }
