@@ -61,7 +61,7 @@ input {
      display: none;
 }
 .overdue-card{
-    border: 2px solid red;
+    border: 4px solid darkred;
 }
 
 .overdue-card.visible{   /*  for adding todays class */
@@ -90,15 +90,26 @@ input {
     font-size: 1.4rem;
 }
 time{
-    position: relative;
-    left: 600px;
-    bottom: 29px;
+    position: absolute;
+    right: 360px;
+    
 
 }
+.date-section{
+    /* position: relative;
+    right: 115px;
+    bottom: 26px;
+    top: 22px;
+    left: 400px; */
+    position: absolute;
+    left: 326px;
+}
 #remove-btn{
-    position: relative;
-    left: 400px;
+    position: absolute;
+    left: 1220px;
     visibility: hidden;
+    border: 1px solid white;
+    color: white;
 
 }
 #remove-btn:hover{

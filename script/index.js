@@ -33,7 +33,7 @@ function checkboxHandler(){
     }
 }
 
-const renderlist= (section , list)=>{
+const renderlist= (section , list, day)=>{
     if (list.length===0){
         section.classList.remove('visible');
     return;
@@ -50,11 +50,19 @@ const renderlist= (section , list)=>{
     newNode.innerHTML=` <input class="checkbox" type="checkbox">
     <span id ="task-text"> ${list[list.length-1].task}  </span> 
     <time >${list[list.length-1].time}</time>
+
     <button id ="remove-btn" class="btn" > Remove</button>
     <hr>
    `;
     
-
+    if (day !==0)
+    {
+        const newday= document.createElement('date');
+        const timeEl=newNode.querySelector('.checkbox');
+        newday.textContent= `${list[list.length-1].date}`;
+        timeEl.before(newday);
+        newday.classList.add('date-section');
+    }
     container.append(newNode);
     const checkbox= newNode.querySelector('.checkbox');
 
@@ -89,21 +97,21 @@ let dateStr=dateValue.toString(10).substr(8,2);
 const d1=parseInt(dateStr);
 if (d1 - dd ===0){
     todayList.push(listObject);
-    renderlist(todaySection,todayList);
+    renderlist(todaySection,todayList,0);
     
 }
 else if (d1 - dd ===1){
     tommList.push(listObject);
-    renderlist( tommSection,tommList);
+    renderlist( tommSection,tommList,0);
 
 }
 else if (d1 - dd <0){
     overdueList.push(listObject);
-    renderlist( overdueSection,overdueList);
+    renderlist( overdueSection,overdueList,1);
 }
 else{
     laterList.push(listObject);
-    renderlist(laterSection, laterList);
+    renderlist(laterSection, laterList,1);
 
 }
 
