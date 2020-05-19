@@ -3,6 +3,10 @@
  
     background-color: #ff3482;
 }
+.heading{
+    font-size: 3.4rem;
+    color: navajowhite;
+}
 #main-card{
     background-color: white;
     padding:40px ;
@@ -102,7 +106,7 @@ time{
     top: 22px;
     left: 400px; */
     position: absolute;
-    left: 326px;
+    left: 329px;
 }
 #remove-btn{
     position: absolute;

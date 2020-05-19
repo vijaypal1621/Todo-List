@@ -19,11 +19,12 @@ function checkboxHandler(){
     const parentList = this.closest('li');
     const removeBtn = parentList.querySelector('button');
     const text= parentList.querySelector('span');
+    //console.log(this);  here this refers to html element not the property
     if (this.checked){
         
         text.style.textDecoration="line-through";
          removeBtn.classList.add('visible');
-         console.log(removeBtn);
+         
          removeBtn.addEventListener('click', removeBtnHandler);
     }
     else{
@@ -66,8 +67,6 @@ const renderlist= (section , list, day)=>{
     container.append(newNode);
     const checkbox= newNode.querySelector('.checkbox');
 
-//    const removeBtn = newNode.querySelector('button');
-//    removeBtn.addEventListener('click', removeBtnHandler);
    checkbox.addEventListener('click', checkboxHandler);
 };
 
@@ -80,9 +79,10 @@ const dateValue= document.getElementById('date').value;
 const timeValue= document.getElementById('time').value;
 
 if (taskValue==='' || dateValue==='' || timeValue===''){
-   return;
+   alert("Please fill all the sections");
+    return;
 }
-
+// created an object to store the data entered by the user and further save it an array of its time-type
 const listObject={
     task: taskValue,
     date: dateValue,
